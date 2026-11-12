@@ -20,3 +20,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeSurprise()});
 
 
 
+const startDate = new Date('2024-02-14T00:00:00+08:00');
+const daysCount = document.getElementById('daysCount');
+function updateDays(){const now=new Date();const diff=Math.max(0,Math.floor((now-startDate)/86400000));daysCount.textContent=diff.toLocaleString('zh-CN');}
+updateDays();setInterval(updateDays,60000);
